@@ -1,11 +1,24 @@
-
+// Select all the drums buttons
 const numberOfDrumbButton = document.querySelectorAll('.drum').length;
 
+ // Loop over them all
 for (i = 0; i<numberOfDrumbButton; i++) {
-document.querySelectorAll(".drum")[i].addEventListener("click", (event) => {
-    alert('i got clicked');
-  });
+document.querySelectorAll(".drum")[i].addEventListener("click", event => {
+  
+ 
+let audio = new Audio("sounds/tom-1.mp3")
+audio.play();
+  
+});
 }
+
+function HouseKeeper (yearOfExperience, name, cleaningRepertoire) {
+  this.yearOfExperience = yearOfExperience;
+  this.name = name;
+  this.cleaningRepertoire = cleaningRepertoire; 
+}
+
+
 
 //   switch (buttonClick) {
 //     case "q":
