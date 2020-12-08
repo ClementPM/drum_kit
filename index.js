@@ -5,6 +5,8 @@ const numberOfDrumbButton = document.querySelectorAll('.drum').length;
 for (i = 0; i<numberOfDrumbButton; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function() {
 
+    // this is the content of the anonymous function
+
   let buttonInnerHTML = this.innerHTML;
 
     switch (buttonInnerHTML) {
