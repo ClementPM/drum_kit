@@ -1,3 +1,6 @@
+
+// Detecting button press
+
 // Select all the drums buttons
 const numberOfDrumbButton = document.querySelectorAll('.drum').length;
 
@@ -6,10 +9,19 @@ for (i = 0; i<numberOfDrumbButton; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function() {
 
     // this is the content of the anonymous function
+    let buttonInnerHTML = this.innerHTML;
 
-  let buttonInnerHTML = this.innerHTML;
+    makeSound(buttonInnerHTML);
+  });
+}
+  
+  // Detecting keyboard press
+document.addEventListener("keypress", (event) => {
+  makeSound(event.key);
+});
 
-    switch (buttonInnerHTML) {
+const makeSound = (key) => { 
+    switch (key) {
       case "q":
         let tom1 = new Audio ('sounds/tom-1.mp3');
         tom1.play();
@@ -45,7 +57,6 @@ for (i = 0; i<numberOfDrumbButton; i++) {
             kick.play();
           break;
 
-      default: console.log(buttonInnerHTML);
+      default: console.log(key);
     }
-  });
-}
+  };
