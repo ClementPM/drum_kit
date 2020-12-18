@@ -12,12 +12,14 @@ for (i = 0; i<numberOfDrumbButton; i++) {
     let buttonInnerHTML = this.innerHTML;
 
     makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
   });
 }
   
   // Detecting keyboard press
 document.addEventListener("keypress", (event) => {
   makeSound(event.key);
+  buttonAnimation(event.key)
 });
 
 const makeSound = (key) => { 
@@ -59,4 +61,13 @@ const makeSound = (key) => {
 
       default: console.log(key);
     }
+  };
+
+  const buttonAnimation = currentKey => {
+    const activeButton = document.querySelector(`.${currentKey}`); 
+    activeButton.classList.add('pressed');
+
+  setTimeout(() => {
+      activeButton.classList.remove('pressed');
+    }, 100) ;
   };
